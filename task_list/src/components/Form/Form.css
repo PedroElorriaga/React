@@ -52,6 +52,12 @@
   background: #fc2e4d27;
 }
 
+.active_tasks li .buttons {
+  margin-left: auto;
+  display: flex;
+  gap: 5px
+}
+
 .active_tasks li button {
   border: none;
   background: #fc2e4d;
@@ -59,8 +65,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 40px;
-  width: 40px;
+  height: 20px;
+  width: 20px;
   cursor: pointer;
 }
 

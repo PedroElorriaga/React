@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { CgMathPlus, CgClose } from "react-icons/cg";
+import { CgMathPlus, CgClose, CgOptions } from "react-icons/cg";
 import "./Form.css";
 
 export default class Form extends Component {
@@ -9,7 +9,8 @@ export default class Form extends Component {
       'Estudar...',
       'Fazer Almoço...'
     ],
-    activeTask: JSON.parse(localStorage.getItem('tasks')) || []
+    activeTask: JSON.parse(localStorage.getItem('tasks')) || [],
+    index: -1
   };
 
   handleNewTask = (event) => {
@@ -18,9 +19,9 @@ export default class Form extends Component {
     });
   };
 
-  handleDeleteTask = (event) => {
+  handleDeleteTask = (item) => {
     const { activeTask } = this.state;
-    const index = activeTask.indexOf(event.target.value);
+    const index = activeTask.indexOf(item);
     activeTask.splice(index, 1);
     this.setState({
       activeTask: [...activeTask]
@@ -29,12 +30,32 @@ export default class Form extends Component {
 
   handleAddNewTask = (event) => {
     event.preventDefault();
-    const { novaTask, activeTask } = this.state;
-    if (activeTask.indexOf(novaTask.trim()) !== -1) return;
+    const { novaTask, activeTask, index } = this.state;
+    const trimmedTask = novaTask.trim();
+    if (!trimmedTask || activeTask.includes(trimmedTask)) return;
+    if (index !== -1) {
+      activeTask[index] = trimmedTask;
+      this.setState({
+        activeTask: [...activeTask],
+        novaTask: '',
+        index: -1
+      }, this.saveTasksOnLocalStorage);
+    } else {
+      this.setState({
+        activeTask: [...activeTask, trimmedTask],
+        novaTask: '',
+        index: -1
+      }, this.saveTasksOnLocalStorage);
+    }
+  };
+
+  handleEditTask = (item) => {
+    const { activeTask } = this.state;
+    const index = activeTask.indexOf(item);
     this.setState({
-      activeTask: [...activeTask, novaTask.trim()],
-      novaTask: ''
-    }, this.saveTasksOnLocalStorage);
+      novaTask: activeTask[index],
+      index: index
+    });
   };
 
   saveTasksOnLocalStorage() {
@@ -47,7 +68,10 @@ export default class Form extends Component {
       tasksList.push(
         <li>
           {item}
-          <button onClick={this.handleDeleteTask} value={item}><CgClose /></button>
+          <div className="buttons">
+            <button onClick={() => this.handleEditTask(item)}><CgOptions /></button>
+            <button onClick={() => this.handleDeleteTask(item)}><CgClose /></button>
+          </div>
         </li>
       );
     });
