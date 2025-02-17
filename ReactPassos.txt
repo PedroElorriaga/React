@@ -1,0 +1,24 @@
+1 - Executaremos um CLI para criar uma estrutura do React em nosso ambiente 'npx create-react-app nome_projeto' ou 'npx create-react-app .',
+para criar o projeto na pasta atual de trabalho
+
+Ex: aqui por exemplo executei o seguinte 'npx create-react-app task_list' 
+Erros: o erro que enfrentei foi ao executar 'npx create-react-app .' e aparentemente o nome do projeto não pode conter letras maiusculas.
+tive erro de web-vitals que por algum motivo não foi instalado com o react então executei o 'npm i web-vitals' para instalar
+
+
+2 - Exclui algumas pastas não necessarias para este projeto, em SRC ficaram somente as seguintes páginas App.cs, .js e index.js, ja em public,
+ficou somente o index.html
+
+Erros: tivemos que excluir algumas importações de index.js e instancias do web-vitals
+
+DICA: para gerar o editorconfig, basta habilitar a extensão dele dentro do VsCode e clicar com o botão direito na pasta da raiz do diretorio,
+do projeto que aparecera a opção de gerar o arquivo .editorconfig
+
+
+3 - Usaremos o eslint para manter um código limpo 'npm i eslint babel-eslint -D' e rodei um CLI 'npx eslint --init'
+
+Erros: -
+
+
+4 - Criamos o primeiro componente dentro de SRC/COMPONENTS/Main.js e ja criamos o CSS para esse componente em questão em SRC/COMPONENTS/Main.CSS,
+continuamos com o Form.js e Form.css, seguindo a mesma logica de caminhos de pastas 

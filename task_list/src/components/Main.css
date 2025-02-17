@@ -1,0 +1,13 @@
+.main {
+  background: #fff;
+  padding: 40px;
+  margin: 40px auto;
+  width: 900px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #ffffffc2;
+}
+
+.main h1,
+p {
+  text-align: center;
+}

@@ -1,0 +1,69 @@
+.main form {
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main form input,
+.main form button {
+  padding: 10px;
+  border: 1px solid #bdbdbd;
+  cursor: pointer;
+  height: 40px;
+}
+
+.main form button[type="submit"] {
+  background: #f04c64;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main form button[type="submit"]:hover {
+  background: #fc2e4d;
+}
+
+.active_tasks {
+  text-align: center;
+  padding: 20px;
+}
+
+.active_tasks ul {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.active_tasks li {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 250px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.active_tasks li:hover {
+  background: #fc2e4d27;
+}
+
+.active_tasks li button {
+  border: none;
+  background: #fc2e4d;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+}
+
+.active_tasks li button:hover {
+  background: #b8152d;
+}
