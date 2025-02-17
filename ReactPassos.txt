@@ -17,8 +17,11 @@ do projeto que aparecera a opção de gerar o arquivo .editorconfig
 
 3 - Usaremos o eslint para manter um código limpo 'npm i eslint babel-eslint -D' e rodei um CLI 'npx eslint --init'
 
-Erros: -
-
 
 4 - Criamos o primeiro componente dentro de SRC/COMPONENTS/Main.js e ja criamos o CSS para esse componente em questão em SRC/COMPONENTS/Main.CSS,
 continuamos com o Form.js e Form.css, seguindo a mesma logica de caminhos de pastas 
+
+
+5 - Reestruturei novamente o projeto e colocamos agora cada componente em seu devido lugar, agora os componentes estao dentro de funções,
+e as funções que faziam as engrenagens funcionar continuam no arquivo Main.js, porem agora elas são acessadas pelos componentes como props, aproveitando,
+baixamos uma nova lib que faz essa associação dos props nos componentes 'npm i prop-types' 
